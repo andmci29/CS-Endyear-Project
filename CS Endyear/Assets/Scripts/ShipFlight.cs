@@ -7,11 +7,18 @@ public class ShipFlight : MonoBehaviour
 
     void Update()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        float moveHorizontal = Input.GetAxisRaw("Horizontal");
+        float moveVertical = Input.GetAxisRaw("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, moveVertical / 2, 0.0f);
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical / 1.5f, 0.0f);
 
-        rb.AddForce(movement * thrust, ForceMode.Impulse);
+        if (Vector3.Dot(rb.linearVelocity.normalized, movement.normalized) < 0)
+        {
+            rb.AddForce(movement * thrust * 2f, ForceMode.Impulse);
+        }
+        else
+        {
+            rb.AddForce(movement * thrust, ForceMode.Impulse);
+        }
     }
 }
