@@ -5,9 +5,9 @@ public class PlayerCollision : MonoBehaviour
 {
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.collider.name == "Obstacle")
+        if (coll.collider.CompareTag("Obstacle"))
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
