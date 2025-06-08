@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 639897739936661996}
   - component: {fileID: 9088015427159862436}
   - component: {fileID: 4293694053874414688}
+  - component: {fileID: 1571960437561481088}
   m_Layer: 6
   m_Name: DebrisObstacle
   m_TagString: Obstacle
@@ -30,8 +31,8 @@ Transform:
   m_GameObject: {fileID: 3359467334929121767}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -88.6, y: 45.0121, z: 881.0256}
-  m_LocalScale: {x: 10, y: 221.14674, z: 10}
+  m_LocalPosition: {x: -88.6, y: 249.3375, z: 881.0256}
+  m_LocalScale: {x: 10, y: 16.821766, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -51,7 +52,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3359467334929121767}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   self: {fileID: 3359467334929121767}
-  killZ: -150
+  killZ: -250
 --- !u!114 &4293694053874414688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +140,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &1571960437561481088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3359467334929121767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a8b94fbba847b4692620e6d3776b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bolt: {fileID: 4701751121337426070, guid: 5c46dabf5d372df498e87292097f789d, type: 3}
+  spawnInterval: 0.25
