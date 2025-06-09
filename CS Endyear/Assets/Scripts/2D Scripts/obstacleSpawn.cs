@@ -52,7 +52,7 @@ public class obstacleSpawn : MonoBehaviour
     void Spawn(GameObject obstacle)
     {
         float randomY = Random.Range(minY, maxY);
-        Vector3 spawnPosition = new Vector3(player.position.x + 150, randomY, 10);
+        Vector3 spawnPosition = new Vector3(player.position.x + 150, randomY, 0);
         Instantiate(obstacle, spawnPosition, Quaternion.identity);
     }
 

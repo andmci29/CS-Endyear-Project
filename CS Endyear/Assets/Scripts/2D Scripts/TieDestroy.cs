@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class TieDestroy : MonoBehaviour
@@ -19,10 +20,16 @@ public class TieDestroy : MonoBehaviour
     public float rotationSpeed = 5f;
     public bool lookAtTarget = true;
 
+    [Header("Straight Line Settings")]
+    public float straightLineSpeed = 10f; // Speed when moving in straight line past player
+    public string sceneToLoad = "GameOver"; // Scene name to load
+    public float sceneChangeDelay = 2f; // Delay before changing scene
+
     private float currentOffset;
+    private bool isMovingStraight = false;
+    private bool hasReachedPlayer = false;
 
     [Header("Other")]
-    public GameObject self;
     private GameObject tmpObject;
     private TextMeshProUGUI scoreText;
     public static int scoreDisplay = 0;
@@ -38,6 +45,9 @@ public class TieDestroy : MonoBehaviour
 
     Vector3 ApplySeparation(Vector3 desiredPosition)
     {
+        // Don't apply separation when moving in straight line
+        if (isMovingStraight) return desiredPosition;
+
         // Find all nearby TIE Fighters
         Collider[] nearbyTies = Physics.OverlapSphere(transform.position, separationDistance, tieFighterLayer);
 
@@ -79,24 +89,45 @@ public class TieDestroy : MonoBehaviour
     {
         if (target == null) return;
 
-        // Gradually reduce the offset to make the object get closer
-        if (currentOffset > 0.5f) // Stop when very close
+        // Check if TIE Fighter has reached the same X position as the target
+        if (!hasReachedPlayer && transform.position.x <= target.position.x)
         {
-            currentOffset -= approachSpeed * Time.deltaTime;
+            hasReachedPlayer = true;
+            isMovingStraight = true;
+
+            scoreText.text = "A TIE got through!";
+
+            // Start scene change countdown
+            Invoke("ChangeScene", sceneChangeDelay);
         }
 
-        // Calculate desired position (in front of the target)
-        Vector3 frontDirection = Vector3.right;
-        Vector3 desiredPosition = target.position + (frontDirection * currentOffset);
+        if (isMovingStraight)
+        {
+            // Move in straight line to the left (past the player)
+            transform.position += Vector3.left * straightLineSpeed * Time.deltaTime;
+        }
+        else
+        {
+            // Normal following behavior
+            // Gradually reduce the offset to make the object get closer
+            if (currentOffset > 0.5f) // Stop when very close
+            {
+                currentOffset -= approachSpeed * Time.deltaTime;
+            }
 
-        // Apply separation from other TIE Fighters
-        desiredPosition = ApplySeparation(desiredPosition);
+            // Calculate desired position (in front of the target)
+            Vector3 frontDirection = Vector3.right;
+            Vector3 desiredPosition = target.position + (frontDirection * currentOffset);
 
-        // Smoothly move towards the desired position with delay
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, followDelay * Time.deltaTime);
+            // Apply separation from other TIE Fighters
+            desiredPosition = ApplySeparation(desiredPosition);
 
-        // Rotate to look at target if enabled
-        if (lookAtTarget)
+            // Smoothly move towards the desired position with delay
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, followDelay * Time.deltaTime);
+        }
+
+        // Rotate to look at target if enabled (only when not moving straight)
+        if (lookAtTarget && !isMovingStraight)
         {
             Vector3 directionToTarget = target.position - transform.position;
 
@@ -108,6 +139,11 @@ public class TieDestroy : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
             }
         }
+    }
+
+    void ChangeScene()
+    {
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     void OnDrawGizmosSelected()
@@ -132,13 +168,13 @@ public class TieDestroy : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.collider.CompareTag("Blaster") && (GetComponent<Renderer>().isVisible))
+        if (coll.collider.CompareTag("Blaster"))
         {
             scoreDisplay++;
             scoreText.text = "TIEs Blasted: " + scoreDisplay.ToString();
-            Destroy(self);
-        }
 
-        Destroy(coll.gameObject);
+            Destroy(gameObject); // Use gameObject instead of self
+            Destroy(coll.gameObject);
+        }
     }
 }

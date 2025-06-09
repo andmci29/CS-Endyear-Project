@@ -121,10 +121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2a7b023c5df8345b750b91825ce261, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frontOffset: 200
+  frontOffset: 150
   approachSpeed: 5
   followDelay: 0.5
-  separationDistance: 150
+  separationDistance: 200
   tieFighterLayer:
     serializedVersion: 2
     m_Bits: 1024
