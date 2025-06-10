@@ -32,5 +32,7 @@ public class ShipFlight2D : MonoBehaviour
         currentBankAngle = Mathf.Lerp(currentBankAngle, targetBankAngle, bankSpeed * Time.deltaTime);
 
         transform.rotation = Quaternion.Euler(currentBankAngle, 0, 0);
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, 0.0f);
     }
 }

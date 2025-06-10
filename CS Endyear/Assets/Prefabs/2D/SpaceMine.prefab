@@ -74,7 +74,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: bd19923783c273b408bc7e74b9ab55ce, type: 3}
       propertyPath: m_TagString
-      value: Obstacle
+      value: Mine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -86,6 +86,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bd19923783c273b408bc7e74b9ab55ce, type: 3}
       insertIndex: -1
       addedObject: {fileID: -938927002418440128}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: bd19923783c273b408bc7e74b9ab55ce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3887098365270488120}
   m_SourcePrefab: {fileID: 100100000, guid: bd19923783c273b408bc7e74b9ab55ce, type: 3}
 --- !u!1 &6861390041443842676 stripped
 GameObject:
@@ -125,4 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b89068aec17181648b99166a81d1796a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  self: {fileID: 0}
+  self: {fileID: 6861390041443842676}
+--- !u!114 &3887098365270488120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6861390041443842676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67864ecaa158f5f41991148916fb65f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

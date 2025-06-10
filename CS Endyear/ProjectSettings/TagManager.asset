@@ -8,6 +8,7 @@ TagManager:
   - Walls
   - Blaster
   - Score
+  - Mine
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Blaster
   - Player
   - Tie
-  - 
+  - Camera
   - 
   - 
   - 

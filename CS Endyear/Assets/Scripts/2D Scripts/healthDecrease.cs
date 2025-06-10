@@ -22,5 +22,10 @@ public class healthDecrease : MonoBehaviour
             Destroy(coll.gameObject);
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
+        if (coll.collider.CompareTag("Mine"))
+        {
+            Destroy(coll.gameObject);
+            healthbar.transform.localScale = new Vector3(0f, 1f, 1f);
+        }
     }
 }

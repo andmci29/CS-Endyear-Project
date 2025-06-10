@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 33031500}
   - component: {fileID: 33031503}
   - component: {fileID: 33031502}
-  - component: {fileID: 33031501}
+  - component: {fileID: 33031504}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -291,20 +291,6 @@ RectTransform:
   m_AnchoredPosition: {x: 107, y: 18}
   m_SizeDelta: {x: 210.50598, y: 50.4747}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &33031501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33031499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19d8306513a7a4e40ac97464bc5121cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreInterval: 0.05
-  scoreText: {fileID: 33031502}
 --- !u!114 &33031502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,7 +311,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Distance to hyperspace jump: '
+  m_text: 'Distance traveled: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -404,6 +390,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33031499}
   m_CullTransparentMesh: 1
+--- !u!114 &33031504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33031499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82b20283b5a5da143bae95f325f92ed5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreInterval: 0.05
+  scoreText: {fileID: 33031502}
 --- !u!4 &43686521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7600322563847572532, guid: 0c080ffad4b87c84f8a33e3486e3746b, type: 3}

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RandomSpawner : MonoBehaviour
 {
+    public GameObject tieVisual;
     public GameObject debrisObstacle;
     public GameObject obstacle;
     public float minX = -5f;
@@ -27,7 +28,7 @@ public class RandomSpawner : MonoBehaviour
         }
         if (debrisCount == intervalThreshold / 15)
         {
-            int chance = (int)(Random.Range(1, 5));
+            int chance = (int)(Random.Range(1, 6));
             if (chance == 1)
             {
                 SpawnHorizontalDebris(debrisObstacle);
@@ -41,9 +42,9 @@ public class RandomSpawner : MonoBehaviour
         if (intervalCount == intervalThreshold)
         {
             spawnInterval -= 0.01f;
-            if (spawnInterval < 0.04f)
+            if (spawnInterval < 0.05f)
             {
-                spawnInterval = 0.04f;
+                spawnInterval = 0.05f;
             }
             intervalThreshold += 30;
             intervalCount = 0;
@@ -61,16 +62,19 @@ public class RandomSpawner : MonoBehaviour
     void SpawnDebris(GameObject obstacle)
     {
         float randomX = Random.Range(-120, 120);
-        float randomRot = Random.Range(140f, 250f);
+        float randomRot = Random.Range(160f, 220f);
         Quaternion rotation = Quaternion.Euler(0f, 0f, randomRot);
+        Quaternion tieRotation = Quaternion.Euler(0f, 0f, randomRot + 90f);
         Vector3 spawnPosition = new Vector3(randomX, 250, z);
         Instantiate(obstacle, spawnPosition, rotation);
+        Instantiate(tieVisual, spawnPosition, tieRotation);
     }
 
     void SpawnHorizontalDebris(GameObject obstacle)
     {
         float x = 165f;
         Quaternion rotation = Quaternion.Euler(0f, 0f, 90f);
+        Quaternion tieRotation = Quaternion.Euler(0f, 0f, 180f);
         int chance = (int)(Random.Range(1, 3));
         if (chance == 1)
         {
@@ -82,5 +86,6 @@ public class RandomSpawner : MonoBehaviour
         float randomY = Random.Range(minY, maxY);
         Vector3 spawnPosition = new Vector3(x, randomY, z);
         Instantiate(obstacle, spawnPosition, rotation);
+        Instantiate(tieVisual, spawnPosition, tieRotation);
     }
 }

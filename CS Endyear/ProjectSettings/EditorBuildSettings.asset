@@ -11,6 +11,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 24e52e317e4f3cf40b4a062d22eff002
+  - enabled: 1
+    path: Assets/Scenes/Hyperspace.unity
+    guid: 17023ca1a5e9c644bbebc908e41fe6eb
+  - enabled: 1
+    path: Assets/Scenes/2D.unity
+    guid: b8235813f3934984da8e54bf6def9bea
+  - enabled: 1
+    path: Assets/Scenes/Arcade Scenes/2D Arcade.unity
+    guid: f0335d3a34995d94da79f1dccb5389d9
+  - enabled: 1
+    path: Assets/Scenes/Arcade Scenes/3D Arcade.unity
+    guid: 1a91ee8414012d64a86effb602f24c4b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

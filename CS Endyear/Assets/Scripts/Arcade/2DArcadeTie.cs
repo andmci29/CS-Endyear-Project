@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class TieDestroy : MonoBehaviour
+public class ArcadeTie : MonoBehaviour
 {
     [Header("Target Settings")]
     private Transform target;
@@ -32,7 +32,7 @@ public class TieDestroy : MonoBehaviour
     [Header("Other")]
     private GameObject tmpObject;
     private TextMeshProUGUI scoreText;
-    public static int scoreDisplay = 1;
+    public static int scoreDisplay = 0;
 
     void Start()
     {
@@ -170,13 +170,8 @@ public class TieDestroy : MonoBehaviour
     {
         if (coll.collider.CompareTag("Blaster"))
         {
-            scoreDisplay--;
-            scoreText.text = "TIEs Left: " + scoreDisplay.ToString();
-
-            if (scoreDisplay <= 0)
-            {
-                SceneTransition.LoadHyperspace("2D", "3D");
-            }
+            scoreDisplay++;
+            scoreText.text = "TIEs Blasted: " + scoreDisplay.ToString();
 
             Destroy(gameObject); // Use gameObject instead of self
             Destroy(coll.gameObject);

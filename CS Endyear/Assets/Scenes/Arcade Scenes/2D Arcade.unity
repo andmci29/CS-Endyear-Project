@@ -1160,7 +1160,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 25
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5589,7 +5589,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'TIEs Left: 50'
+  m_text: 'TIEs Blasted: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5820,7 +5820,7 @@ MonoBehaviour:
   player: {fileID: 1779772965}
   obstacle: {fileID: 2215779120802890093, guid: 0cfca2e882267504cab2db19b5cf420a, type: 3}
   circleObstacle: {fileID: 6861390041443842676, guid: 4ecc11d77fc1c764ba2ba845129491ef, type: 3}
-  tieFighter: {fileID: 3256542170925962787, guid: b0d0937a0decacb408f37a2f4c3e9023, type: 3}
+  tieFighter: {fileID: 3256542170925962787, guid: baa284b6c2d4f6e4cbe3ccc05a33a270, type: 3}
   spawnInterval: 3
   minY: -19
   maxY: 12

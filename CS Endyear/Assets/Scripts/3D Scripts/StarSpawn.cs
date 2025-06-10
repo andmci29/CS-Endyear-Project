@@ -9,18 +9,18 @@ public class StarSpawn : MonoBehaviour
         var main = stars.main;
         main.startLifetime = 15f;
         main.startSpeed = 5f;
-        main.startSize = 0.1f;
+        main.startSize = 0.3f;
         main.startColor = Color.white;
-        main.maxParticles = 1000;
+        main.maxParticles = 5000;
         main.prewarm = true;
 
         var emission = stars.emission;
-        emission.rateOverTime = 75f;
+        emission.rateOverTime = 200f;
 
         var shape = stars.shape;
         shape.enabled = true;
         shape.shapeType = ParticleSystemShapeType.Circle;
-        shape.radius = 90f;
+        shape.radius = 270f;
         shape.position = new Vector3(0, 0, 50f);
 
         var velocityOverLifetime = stars.velocityOverLifetime;

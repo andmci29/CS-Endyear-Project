@@ -40,9 +40,9 @@ public class obstacleSpawn : MonoBehaviour
                 tieSpawnNumIncreaseNum = 0;
             }
 
-            if (tieSpawnNum > 6)
+            if (tieSpawnNum > 5)
             {
-                tieSpawnNum = 6;
+                tieSpawnNum = 5;
             }
 
             tieCount = 0;
