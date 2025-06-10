@@ -598,7 +598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1200d05f65bb86349bab2595fb61bdf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starCount: 1600
+  starCount: 2000
   starFieldRadius: 30
   starMaterial: {fileID: 2100000, guid: c5f414c16b953074fa70ae1449477e87, type: 2}
   hyperspaceProgress: 0
@@ -837,8 +837,8 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
+  m_RenderPostProcessing: 1
+  m_Antialiasing: 2
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
@@ -852,7 +852,7 @@ MonoBehaviour:
   m_RequiresColorTexture: 0
   m_Version: 2
   m_TaaSettings:
-    m_Quality: 3
+    m_Quality: 4
     m_FrameInfluence: 0.1
     m_JitterScale: 1
     m_MipBias: 0
