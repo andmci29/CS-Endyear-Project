@@ -32,7 +32,8 @@ public class TieDestroy : MonoBehaviour
     [Header("Other")]
     private GameObject tmpObject;
     private TextMeshProUGUI scoreText;
-    public static int scoreDisplay = 1;
+    public static int scoreDisplay = 15;
+    public GameObject explosion;
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class TieDestroy : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         // Initialize current offset to the starting front offset
         currentOffset = frontOffset;
+        scoreText.text = "TIEs Left: " + scoreDisplay.ToString();
     }
 
     Vector3 ApplySeparation(Vector3 desiredPosition)
@@ -168,7 +170,7 @@ public class TieDestroy : MonoBehaviour
 
     void OnCollisionEnter(Collision coll)
     {
-        if (coll.collider.CompareTag("Blaster"))
+        if (coll.collider.CompareTag("Blaster") && transform.position.x < target.position.x + 95)
         {
             scoreDisplay--;
             scoreText.text = "TIEs Left: " + scoreDisplay.ToString();
@@ -177,6 +179,8 @@ public class TieDestroy : MonoBehaviour
             {
                 SceneTransition.LoadHyperspace("2D", "3D");
             }
+
+            Instantiate(explosion, transform.position, Quaternion.identity);
 
             Destroy(gameObject); // Use gameObject instead of self
             Destroy(coll.gameObject);

@@ -3,6 +3,12 @@ using UnityEngine;
 public class BlasterShoot2D : MonoBehaviour
 {
     public GameObject bolt;
+    public AudioSource blasterSound;
+
+    void Start()
+    {
+        blasterSound = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -10,6 +16,7 @@ public class BlasterShoot2D : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             Spawn(bolt);
+            blasterSound.Play();
         }
     }
 

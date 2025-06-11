@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class healthDecrease : MonoBehaviour
 {
     public Image healthbar;
+    public GameObject explosion;
 
     void Update()
     {
@@ -25,7 +27,16 @@ public class healthDecrease : MonoBehaviour
         if (coll.collider.CompareTag("Mine"))
         {
             Destroy(coll.gameObject);
-            healthbar.transform.localScale = new Vector3(0f, 1f, 1f);
+            StartCoroutine(Explode());
         }
+    }
+
+    IEnumerator Explode()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(0.5f);
+        healthbar.transform.localScale = new Vector3(0f, 1f, 1f);
+
     }
 }

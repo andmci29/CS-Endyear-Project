@@ -27,5 +27,10 @@ public class PlayButton : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
+
 
 }

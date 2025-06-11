@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 public class score : MonoBehaviour
 {
     private float timer = 0.0f;
-    private int scoreDisplay = 12000;
+    private int scoreDisplay;
     public float scoreInterval = 1.0f;
     public TextMeshProUGUI scoreText;
     public SceneFade sceneFade;
+
+    void Start()
+    {
+        scoreDisplay = (int)(Random.Range(25000f, 40000f));
+    }
     // Update is called once per frame
     void Update()
     {

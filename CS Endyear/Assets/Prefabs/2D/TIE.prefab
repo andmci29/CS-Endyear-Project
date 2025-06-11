@@ -109,7 +109,10 @@ MonoBehaviour:
     m_Bits: 1024
   rotationSpeed: 5
   lookAtTarget: 1
-  self: {fileID: 3256542170925962787}
+  straightLineSpeed: 10
+  sceneToLoad: GameOver
+  sceneChangeDelay: 2
+  explosion: {fileID: 5678829484115350636, guid: 6c5a548cf1e1e9441bb07805fdf79596, type: 3}
 --- !u!65 &1070567444528025550
 BoxCollider:
   m_ObjectHideFlags: 0

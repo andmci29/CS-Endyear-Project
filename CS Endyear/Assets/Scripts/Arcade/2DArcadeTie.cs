@@ -33,6 +33,8 @@ public class ArcadeTie : MonoBehaviour
     private GameObject tmpObject;
     private TextMeshProUGUI scoreText;
     public static int scoreDisplay = 0;
+    public GameObject explosion;
+
 
     void Start()
     {
@@ -172,6 +174,8 @@ public class ArcadeTie : MonoBehaviour
         {
             scoreDisplay++;
             scoreText.text = "TIEs Blasted: " + scoreDisplay.ToString();
+
+            Instantiate(explosion, transform.position, Quaternion.identity);
 
             Destroy(gameObject); // Use gameObject instead of self
             Destroy(coll.gameObject);
