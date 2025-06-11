@@ -97,7 +97,7 @@ public class ArcadeTie : MonoBehaviour
             hasReachedPlayer = true;
             isMovingStraight = true;
 
-            scoreText.text = "A TIE got through!";
+            scoreText.text = "A TiE got through!";
 
             // Start scene change countdown
             Invoke("ChangeScene", sceneChangeDelay);
@@ -173,7 +173,7 @@ public class ArcadeTie : MonoBehaviour
         if (coll.collider.CompareTag("Blaster"))
         {
             scoreDisplay++;
-            scoreText.text = "TIEs Blasted: " + scoreDisplay.ToString();
+            scoreText.text = "TiEs Blasted: " + scoreDisplay.ToString();
 
             Instantiate(explosion, transform.position, Quaternion.identity);
 

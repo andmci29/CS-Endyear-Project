@@ -97,7 +97,7 @@ public class TieDestroy : MonoBehaviour
             hasReachedPlayer = true;
             isMovingStraight = true;
 
-            scoreText.text = "A TIE got through!";
+            scoreText.text = "A TiE got through!";
 
             // Start scene change countdown
             Invoke("ChangeScene", sceneChangeDelay);
@@ -173,7 +173,7 @@ public class TieDestroy : MonoBehaviour
         if (coll.collider.CompareTag("Blaster") && transform.position.x < target.position.x + 95)
         {
             scoreDisplay--;
-            scoreText.text = "TIEs Left: " + scoreDisplay.ToString();
+            scoreText.text = "TiEs Left: " + scoreDisplay.ToString();
 
             if (scoreDisplay <= 0)
             {

@@ -5408,7 +5408,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -6302,6 +6302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthbar: {fileID: 673436457}
+  explosion: {fileID: 5678829484115350636, guid: e82ddc7a7ee844a4f9c3f8676bbfed9e, type: 3}
 --- !u!114 &1779772969
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -47,6 +47,7 @@ public class MenuSelector : MonoBehaviour
                Input.GetKeyDown(KeyCode.A) ||
                Input.GetKeyDown(KeyCode.S) ||
                Input.GetKeyDown(KeyCode.D) ||
+               (Input.GetAxis("Vertical") != 0) ||
                // Check for any key press (more comprehensive)
                Input.inputString.Length > 0;
     }

@@ -13,7 +13,7 @@ public class BlasterShoot2D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") || Input.GetKeyDown(KeyCode.JoystickButton7))
         {
             Spawn(bolt);
             blasterSound.Play();
