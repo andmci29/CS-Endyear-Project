@@ -32,5 +32,9 @@ public class PlayButton : MonoBehaviour
         SceneManager.LoadScene("Credits");
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 
 }

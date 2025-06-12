@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 33031503}
   - component: {fileID: 33031502}
   - component: {fileID: 33031504}
+  - component: {fileID: 33031505}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -154,7 +155,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 107, y: 18}
+  m_AnchoredPosition: {x: 110.3, y: 18}
   m_SizeDelta: {x: 210.50598, y: 50.4747}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &33031502
@@ -179,8 +180,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Distance traveled: '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee659881ea672c84d8e63b6d5c077410, type: 2}
+  m_sharedMaterial: {fileID: 6604149625318773936, guid: ee659881ea672c84d8e63b6d5c077410, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -270,6 +271,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreInterval: 0.05
   scoreText: {fileID: 33031502}
+  scoreD: {fileID: 33031505}
+--- !u!114 &33031505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33031499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f829d3159b0505438602f266b62278d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

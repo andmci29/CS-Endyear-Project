@@ -34,6 +34,7 @@ public class ArcadeTie : MonoBehaviour
     private TextMeshProUGUI scoreText;
     public static int scoreDisplay = 0;
     public GameObject explosion;
+    public ScoreDisplay scoreD;
 
 
     void Start()
@@ -43,6 +44,7 @@ public class ArcadeTie : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform;
         // Initialize current offset to the starting front offset
         currentOffset = frontOffset;
+        scoreD.SetDisplay("Total TiEs Blasted: " + scoreDisplay.ToString());
     }
 
     Vector3 ApplySeparation(Vector3 desiredPosition)
@@ -174,6 +176,8 @@ public class ArcadeTie : MonoBehaviour
         {
             scoreDisplay++;
             scoreText.text = "TiEs Blasted: " + scoreDisplay.ToString();
+
+            scoreD.SetDisplay("Total TiEs Blasted: " + scoreDisplay.ToString());
 
             Instantiate(explosion, transform.position, Quaternion.identity);
 

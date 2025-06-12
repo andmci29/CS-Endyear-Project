@@ -12,7 +12,7 @@ public class score : MonoBehaviour
 
     void Start()
     {
-        scoreDisplay = (int)(Random.Range(25000f, 40000f));
+        scoreDisplay = (int)(Random.Range(20000f, 28000f));
     }
     // Update is called once per frame
     void Update()

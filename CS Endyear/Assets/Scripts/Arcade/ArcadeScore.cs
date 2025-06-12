@@ -7,6 +7,7 @@ public class ArcadeScore : MonoBehaviour
     private int scoreDisplay = 0;
     public float scoreInterval = 1.0f;
     public TextMeshProUGUI scoreText;
+    public ScoreDisplay scoreD;
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +19,7 @@ public class ArcadeScore : MonoBehaviour
             scoreDisplay += 25;
         }
 
+        scoreD.SetDisplay("Total Distance Traveled: " + scoreDisplay.ToString() + "m");
         scoreText.text = "Distance traveled: " + scoreDisplay.ToString() + "m";
     }
 }
